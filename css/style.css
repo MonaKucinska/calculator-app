@@ -268,3 +268,14 @@ body,
     margin-top: 2.7rem;
   }
 }
+
+/* Big screens */
+@media screen and (min-width: 85rem) {
+  .container {
+    height: 90%;
+  }
+
+  .calculator__keys {
+    grid-template-columns: repeat(4, 22.5%);
+  }
+}
