@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+
+:root {
+  --theme-text-light: hsl(0, 0%, 100%);
+  /* THEME 1 */
+  --theme1-bg-main: hsl(222, 26%, 31%);
+  --theme1-bg-screen: hsl(224, 36%, 15%);
+  --theme1-bg-toggle: hsl(
+    223,
+    31%,
+    20%
+  ); /*toggle background, keypad background*/
+
+  --theme1-key-clear-bg: hsl(225, 21%, 49%);
+  --theme1-key-clear-shadow: hsl(224, 28%, 35%);
+
+  --theme1-key-special-bg: hsl(6, 63%, 50%);
+  --theme1-key-special-shadow: hsl(6, 70%, 34%);
+
+  --theme1-key-main-bg: hsl(30, 25%, 89%);
+  --theme1-key-main-shadow: hsl(28, 16%, 65%);
+
+  --theme1-text-dark: hsl(221, 14%, 31%);
+
+  /* THEME 2 */
+  --theme2-bg-main: hsl(0, 0%, 90%);
+  --theme2-bg-screen: hsl(0, 0%, 93%);
+  --theme2-bg-toggle: hsl(0, 5%, 81%); /*toggle background, keypad background*/
+
+  --theme2-key-clear-bg: hsl(185, 42%, 37%);
+  --theme2-key-clear-shadow: hsl(185, 58%, 25%);
+
+  --theme2-key-special-bg: hsl(25, 98%, 40%);
+  --theme2-key-special-shadow: hsl(25, 99%, 27%);
+
+  --theme2-key-main-bg: hsl(45, 7%, 89%);
+  --theme2-key-main-shadow: hsl(35, 11%, 61%);
+
+  --theme2-text-dark: hsl(60, 10%, 19%);
+
+  /* THEME 3  */
+  --theme3-bg-main: hsl(268, 75%, 9%);
+  --theme3-bg-screen: hsl(
+    268,
+    71%,
+    12%
+  ); /*toggle background, keypad background, screen bg*/
+
+  --theme3-key-clear-bg: hsl(281, 89%, 26%);
+  --theme3-key-clear-shadow: hsl(285, 91%, 52%);
+
+  --theme3-key-special-bg: hsl(176, 100%, 44%);
+  --theme3-key-special-shadow: hsl(177, 92%, 70%);
+
+  --theme3-key-main-bg: hsl(268, 47%, 21%);
+  --theme3-key-main-shadow: hsl(290, 70%, 36%);
+
+  --theme3-text-dark: hsl(198, 20%, 13%);
+  --theme3-text-yellow: hsl(52, 100%, 62%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+.calculator__key {
+  margin: 0;
+  font-family: "Spartan", sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  padding: 1.2rem;
+}
+
+.calculator__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.header__title {
+  font-size: 2rem;
+  text-transform: lowercase;
+}
+
+.header__theme {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+}
+
+.theme__switcher--title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  top: 12px;
+}
+
+.header__title,
+.theme__switcher--title {
+  margin: 0;
+}
+
+.theme__switcher {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.switcher__toggle-bg {
+  width: 4rem;
+  height: 1.4rem;
+  position: absolute;
+  border-radius: 15px;
+  top: 41px;
+  right: 18px;
+}
+
+.switcher__choice {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 5px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.switcher__choice--btn {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.switcher__choice--checkmark {
+  position: absolute;
+  top: 25px;
+  right: 2px;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+}
+
+.switcher__choice--checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.switcher__choice--btn:checked ~ .switcher__choice--checkmark:after {
+  display: block;
+}
+
+.calculator__display {
+  text-align: right;
+  margin: 1rem 0;
+  height: 16vh;
+}
+
+.display__previous {
+  font-size: 1.1rem;
+  padding: 1.2rem 0.8rem;
+}
+
+.display__current {
+  padding: 0 0.8rem 1rem 0.8rem;
+  font-size: 1.8rem;
+}
+
+.calculator__keys {
+  display: grid;
+  grid-template-columns: repeat(4, 21.5%);
+  grid-gap: 0.8rem;
+  padding: 1.5rem;
+}
+
+.calculator__display,
+.calculator__keys,
+.calculator__key {
+  border-radius: 8px;
+  border: none;
+}
+
+.calculator__key {
+  padding: 0.8rem 0.5rem;
+}
+
+.calculator__key--reset,
+.calculator__key--delete {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.calculator__key--equal,
+.calculator__key--reset {
+  grid-column: span 2;
+}
+
+.attribution {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
