@@ -1,5 +1,3 @@
-// Toggle styles
-
 const themeOneBtn = document.getElementById("1");
 const themeTwoBtn = document.getElementById("2");
 const themeThreeBtn = document.getElementById("3");
@@ -11,7 +9,9 @@ switcher.addEventListener("click", applyTheme);
 
 
 function applyTheme () {
+  //clears all theme classes
   container.className = "container";
+  //selects a theme class based on the checked radio button
   if(themeOneBtn.checked) {
     container.classList.add("theme1");
   }

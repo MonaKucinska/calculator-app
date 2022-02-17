@@ -5,11 +5,7 @@
   /* THEME 1 */
   --theme1-bg-main: hsl(222, 26%, 31%);
   --theme1-bg-screen: hsl(224, 36%, 15%);
-  --theme1-bg-toggle: hsl(
-    223,
-    31%,
-    20%
-  ); /*toggle background, keypad background*/
+  --theme1-bg-toggle: hsl(223, 31%, 20%);
 
   --theme1-key-clear-bg: hsl(225, 21%, 49%);
   --theme1-key-clear-shadow: hsl(224, 28%, 35%);
@@ -25,8 +21,7 @@
   /* THEME 2 */
   --theme2-bg-main: hsl(0, 0%, 90%);
   --theme2-bg-screen: hsl(0, 0%, 93%);
-  --theme2-bg-toggle: hsl(0, 5%, 81%); /*toggle background, keypad background*/
-
+  --theme2-bg-toggle: hsl(0, 5%, 81%);
   --theme2-key-clear-bg: hsl(185, 42%, 37%);
   --theme2-key-clear-shadow: hsl(185, 58%, 25%);
 
@@ -40,11 +35,7 @@
 
   /* THEME 3  */
   --theme3-bg-main: hsl(268, 75%, 9%);
-  --theme3-bg-screen: hsl(
-    268,
-    71%,
-    12%
-  ); /*toggle background, keypad background, screen bg*/
+  --theme3-bg-screen: hsl(268, 71%, 12%);
 
   --theme3-key-clear-bg: hsl(281, 89%, 26%);
   --theme3-key-clear-shadow: hsl(285, 91%, 52%);
@@ -114,13 +105,17 @@ body,
   align-items: center;
 }
 
+.theme__switcher {
+  position: relative;
+}
+
 .switcher__toggle-bg {
   width: 4rem;
   height: 1.4rem;
   position: absolute;
   border-radius: 15px;
-  top: 2.56rem;
-  right: 1.125rem;
+  top: 1.4rem;
+  right: 0;
 }
 
 .switcher__choice {
@@ -219,7 +214,6 @@ body,
 @media screen and (min-width: 30rem) {
   .switcher__toggle-bg {
     width: 7rem;
-    right: 1.5rem;
   }
 
   .switcher__choice {
@@ -247,5 +241,30 @@ body,
   .calculator__keys {
     grid-template-columns: repeat(4, 23%);
     grid-gap: 1rem;
+  }
+}
+
+/* Laptop */
+@media screen and (min-width: 64rem) {
+  .calculator {
+    width: 40%;
+    height: 90%;
+    margin: 1rem auto;
+  }
+
+  .calculator__display {
+    height: 16vh;
+  }
+
+  .display__previous {
+    padding: 1rem;
+  }
+
+  .calculator__keys {
+    grid-template-columns: repeat(4, 21.5%);
+  }
+
+  .attribution {
+    margin-top: 2.7rem;
   }
 }

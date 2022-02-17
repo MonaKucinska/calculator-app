@@ -7,6 +7,7 @@ const numberBtns = document.querySelectorAll("[data-type=number]");
 const displayPrevious = document.querySelector("[data-display=previous]");
 const displayCurrent = document.querySelector("[data-display=current]");
 
+
 class Calculate {
   constructor(displayPrevious, displayCurrent) {
     this.displayPrevious = displayPrevious;
@@ -14,12 +15,16 @@ class Calculate {
     this.clear ();
   }
 
-
+  //displayes a number (toString method is used to prevent the default 
+  //behavior of JS that would perform an addition operation on two numbers)
   appendNumber (number) {
+    //prevents adding multiple dots
     if (number === "." && this.currentOperand.includes(".")) return;
     this.currentOperand = this.currentOperand.toString() + number.toString();
   }
 
+  //takes an operation symbol and performs it, if the user entered any value before
+  //clicking on the operation button
   chooseOperation (operation) {
     if (this.currentOperand === "") return;
     if (this.previousOperand !== "") {
@@ -30,7 +35,7 @@ class Calculate {
     this.currentOperand = "";
   }
 
-  
+  //perform calculation
   calculate () {
     let result;
     let firstValue = parseFloat(this.previousOperand);
@@ -58,6 +63,7 @@ class Calculate {
     this.previousOperand = "";
   }
 
+  //update a field that displays entered data and result of the calculations
   updateDisplay () {
     this.displayCurrent.innerText = this.currentOperand;
     if(this.operation != null) {
@@ -68,11 +74,12 @@ class Calculate {
    
   }
 
+  //deletes the last character
   delete () {
     this.currentOperand = this.currentOperand.toString().slice(0, -1);
   }
 
-
+  //clears the displayed field
   clear () {
     this.currentOperand = '';
     this.previousOperand = '';
@@ -80,6 +87,7 @@ class Calculate {
   }
 
 };
+
 
 const calculator = new Calculate(displayPrevious, displayCurrent);
 
