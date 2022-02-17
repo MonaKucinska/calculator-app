@@ -13,12 +13,65 @@
 
 <body>
 
+  <div class="container">
+    <div class="calculator">
+      <header class="calculator__header">
+        <h1 class="header__title">Calc</h1>
+        <div class="header__theme">
+          <h2 class="theme-switcher__title">Theme</h2>
+          <div class="theme__switcher">
+            <div class="switcher__toggle-bg"></div>
+            <label class="switcher__choice">1
+              <input class="switcher__choice--btn" type="radio" name="theme" id="1" checked>
+              <span class="switcher__choice--checkmark"></span>
+            </label>
+            <label class="switcher__choice">2
+              <input class="switcher__choice--btn" type="radio" name="theme" id="2">
+              <span class="switcher__choice--checkmark"></span>
+            </label>
+            <label class="switcher__choice">3
+              <input class="switcher__choice--btn" type="radio" name="theme" id="3">
+              <span class="switcher__choice--checkmark"></span>
+            </label>
+          </div>
+        </div>
+      </header>
+      <main class="calculator__main">
+        <div class="calculator__display">
+          <div data-display="previous" class="display__previous"></div>
+          <div data-display="current" class="display__current"></div>
+        </div>
+        <div class="calculator__keys">
+          <button data-type="number" class="btn number">7</button>
+          <button data-type="number" class="btn number">8</button>
+          <button data-type="number" class="btn number">9</button>
+          <button data-type="delete" class="btn delete">Del</button>
+          <button data-type="number" class="btn number">4</button>
+          <button data-type="number" class="btn number">5</button>
+          <button data-type="number" class="btn number">6</button>
+          <button data-type="operator" class="btn operator">+</button>
+          <button data-type="number" class="btn number">1</button>
+          <button data-type="number" class="btn number">2</button>
+          <button data-type="number" class="btn number">3</button>
+          <button data-type="operator" class="btn operator">-</button>
+          <button data-type="number" class="btn number">.</button>
+          <button data-type="number" class="btn number">0</button>
+          <button data-type="operator" class="btn operator" id="x">&times;</button>
+          <button data-type="operator" class="btn operator">/</button>
+          <button data-type="reset" class="btn reset">Reset</button>
+          <button data-type="equal" class="btn equal">=</button>
+        </div>
+      </main>
+    </div>
 
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Monika Kucinska</a>.
+    <div class="attribution">
+      <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Monika Kucinska</a>.</p>
+    </div>
   </div>
+
+
+
 </body>
 
 </html>
