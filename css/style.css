@@ -119,8 +119,8 @@ body,
   height: 1.4rem;
   position: absolute;
   border-radius: 15px;
-  top: 41px;
-  right: 18px;
+  top: 2.56rem;
+  right: 1.125rem;
 }
 
 .switcher__choice {
@@ -211,4 +211,41 @@ body,
   font-size: 0.8rem;
   text-align: center;
   letter-spacing: 1px;
+}
+
+/* MEDIA QUERIES */
+
+/* Tablet */
+@media screen and (min-width: 30rem) {
+  .switcher__toggle-bg {
+    width: 7rem;
+    right: 1.5rem;
+  }
+
+  .switcher__choice {
+    padding: 5px 15px;
+  }
+
+  .switcher__choice--checkmark {
+    right: 12px;
+  }
+
+  .calculator__display {
+    height: 18vh;
+  }
+
+  .display__previous {
+    font-size: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .display__current {
+    padding: 0 1rem 1rem 1rem;
+    font-size: 2rem;
+  }
+
+  .calculator__keys {
+    grid-template-columns: repeat(4, 23%);
+    grid-gap: 1rem;
+  }
 }
